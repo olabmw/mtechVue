@@ -16,12 +16,10 @@
     </v-toolbar>
 
     <v-content style="background-color: white">
-
-        <MainComponent/>
-          <!-- TODO How to Send in details to the component -->
-          <ContactComponent/>
-          <ContactComponent/>
-
+      <MainComponent/>
+      <div v-for="contact in contacts" :key="contact.phone">
+        <ContactComponent v-bind:name="contact.name" v-bind:phone="contact.phone" v-bind:email="contact.email"/>
+      </div>
     </v-content>
   </v-app>
 </template>
@@ -38,8 +36,24 @@ export default {
   },
   data() {
     return {
-      //
+      contacts: [
+        {
+          name: "Namn1",
+          phone: "12342345345",
+          email: "jag@hemma1"
+        },
+        {
+          name: "Namn2",
+          phone: "7546523",
+          email: "jag@hemma2"
+        }
+      ]
     };
   }
 };
 </script>
+
+<style>
+
+</style>
+

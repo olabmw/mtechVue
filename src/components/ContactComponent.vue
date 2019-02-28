@@ -10,10 +10,9 @@
   
           <v-card-title primary-title>
             <div>
-              <h3 class="headline mb-0">Namn här</h3>
-              <!-- <div> {{ card_text }} </div> -->
-              <div>Mail: asdf</div>
-              <div>Telefon: asdffsf</div>
+              <h3 class="headline mb-0">{{name}}</h3>
+              <div>Telefon: {{phone}}</div>
+              <div>Mail: {{email}}</div>
             </div>
           </v-card-title>
   
@@ -22,6 +21,13 @@
     </v-layout>
   </v-container>
 </template>
+
+<script>
+export default {
+  props: ['name', 'phone', 'email']
+}
+</script>
+
 
 <style>
 
